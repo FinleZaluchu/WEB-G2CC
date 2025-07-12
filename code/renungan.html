@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Renungan Harian | G2CC</title>
+
+  <!-- Pakai stylesheet utama saja -->
+  <link rel="stylesheet" href="beranda.css" />
+  <link rel="icon" type="image/png" href="api putih.png" />
+</head>
+
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="beranda.html"><img src="api putih.png" /></a>
+    </div>
+    <ul>
+      <li><a href="beranda.html"><strong>BERANDA</strong></a></li>
+      <li><a href="ibadah.html"><strong>IBADAH</strong></a></li>
+      <li><a href="kegiatan.html"><strong>KEGIATAN</strong></a></li>
+      <li><a href="persembahan.html"><strong>PERSEMBAHAN</strong></a></li>
+      <li><a href="tentang.html"><strong>TENTANG</strong></a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== DAFTAR RENUNGAN ===== -->
+  <section class="daftar-renungan">
+    <h1>Renungan Harian</h1>
+
+    <div class="renungan-list">
+      <!-- Item 1 -->
+      <div class="renungan-item">
+        <img src="uapok.jpg" alt="Renungan 1" />
+        <div class="renungan-info">
+          <h3>Hidup Dalam Kasih</h3>
+          <p><em>Oleh: Pdm. Refo Zaluchu</em></p>
+          <a href="renungan1.html" class="btn-renungan">Baca Selengkapnya</a>
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="renungan-item">
+        <img src="abuni.jpg" alt="Renungan 2" />
+        <div class="renungan-info">
+          <h3>Iman yang Tangguh</h3>
+          <p><em>Oleh: Abuna Sonny Zaluchu</em></p>
+          <a href="renungan2.html" class="btn-renungan">Baca Selengkapnya</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- === TOMBOL BACK === -->
+    <div class="back-container">
+      <button class="btn-back" onclick="history.back()">← Kembali</button>
+      <!-- Atau pakai  <a href="beranda.html" class="btn-back">← Kembali</a>  -->
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer-grid">
+    <div class="footer-left">
+      <img src="api footer.png" alt="Logo G2CC" class="footer-logo" />
+    </div>
+
+    <div class="footer-center">
+      <p><strong>Sekretariat Gereja</strong><br>
+        Jl. Padma Boulevard Utara No.63, Semarang
+      </p>
+      <p><strong>Kontak Gereja</strong><br>024‑76430604</p>
+    </div>
+
+    <div class="footer-right">
+      <p><strong>Find Us On</strong></p>
+      <div class="footer-social">
+        <a href="https://instagram.com/g2cc.semarang"><img src="instagram.png"></a>
+        <a href="https://facebook.com/share/1AfioGmjFK/"><img src="facebook.png"></a>
+        <a href="https://youtube.com/@sonnyzaluchu"><img src="youtube.png"></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="beranda.js" defer></script>
+</body>
+</html>

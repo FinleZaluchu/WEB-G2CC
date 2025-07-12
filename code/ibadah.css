@@ -1,0 +1,440 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+:root {
+  --primary: #000;
+  --secondary: #ea8512; /* oranye */
+  --bg-light: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  background: var(--bg-light);
+  color: #111;
+  padding-top: 70px;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 14px 28px; /* bigger */
+  background: transparent;
+  background: rgba(0, 0, 0, 0.9);          /* transparent at top */
+  transition: background 0.3s ease;
+}
+.navbar.scrolled {
+  background: #000;                 /* solid black after scroll */
+}
+.navbar .logo img {
+  width: 32px;
+  height: 36px;
+}
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 36px;
+  font-size: 15px;
+}
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.navbar a:hover {
+  color: var(--secondary);
+}
+
+/* ===== HERO 16:9 ===== */
+.hero-carousel-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* maintains 16:9 */
+  overflow: hidden;
+}
+.hero-carousel {
+  display: flex;
+  height: 100%;
+  transition: transform 0.7s ease;
+}
+.hero-slide {
+  flex: 0 0 100%;
+  height: 100%;
+}
+.hero-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- HERO IBADAH ---------- */
+.hero-ibadah{
+  position: relative;
+  height: 340px;
+  background: url("dummy\ carousel\ ibadah\ 3.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  color:#fff;
+}
+.hero-ibadah::before{
+  content:"";
+  position:absolute; inset:0;
+  background: rgba(0,0,0,.5);
+}
+.hero-ibadah__inner{
+  position:relative;
+  margin-left:48px;
+}
+.hero-ibadah h1{
+  font-size:48px;
+  font-weight:700;
+  margin:0 0 12px;
+  text-transform:uppercase;
+}
+.hero-breadcrumb{
+  color:#fff;
+  font-size:17px;
+  line-height:1.4;
+}
+
+/* carousel */
+.carousel-wrapper {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 60px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%; /* ensure full width for carousel */
+}
+
+.carousel-item {
+  position: relative;
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-item img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+.carousel-item .label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background-color: var(--secondary);
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 0;
+}
+
+
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 1); /* jadi hitam */
+  color: black;
+  font-size: 24px;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.carousel-btn.prev {
+  left: 12px;
+}
+.carousel-btn.next {
+  right: 12px;
+}
+
+
+/* ---------- SEKSI DETAIL IBADAH ---------- */
+.ibadah-detail {
+  background: #000;
+  color: #fff;
+  /* padding: 60px 0 40px; padding bawah dikurangi biar rapat */
+}
+
+.ibadah-imgbox.carousel-wrapper {
+  max-width: 1080px; /* ubah ukuran di sini */
+  margin: 0 auto;
+  background: #fff;
+  padding-bottom: 60px;
+  border-radius: 10px;
+  margin-top: -20px;
+}
+
+
+.ibadah-detail__inner{
+  max-width:960px;
+  margin:0 auto;
+  text-align:center;
+  padding:0 24px;
+}
+
+.ibadah-title{
+  font-size:40px;
+  font-weight:700;
+  margin:0 0 12px;
+  text-transform:capitalize;
+  position:relative;
+  display:inline-block;
+}
+.ibadah-title::after{               /* garis oranye bawah judul */
+  content:"";
+  position:absolute; left:50%; bottom:-6px;
+  width:120px; height:4px;
+  background:var(--secondary);
+  transform:translateX(-50%);
+}
+
+.ibadah-desc{
+  font-size:18px;
+  max-width:560px;
+  margin:0 auto 40px;
+  line-height:1.6;
+}
+
+.ibadah-imgbox{
+  position:relative;
+}
+.ibadah-imgbox img{
+  width:100%;
+  border-radius:8px;
+}
+.lihat-semua{
+  position:absolute;
+  top:16px; right:16px;
+  background:#000;
+  color:#fff;
+  font-size:14px;
+  font-weight:600;
+  padding:6px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  transition:background .25s;
+}
+.lihat-semua:hover{ background:var(--secondary); }
+
+@media(max-width:768px){
+  .hero-ibadah h1{font-size:36px}
+  .ibadah-title{font-size:32px}
+  .ibadah-desc{font-size:16px}
+}
+
+
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tabel-jadwal {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+  .kolom-judul {
+    gap: 12px;
+  }
+  .slot-group {
+    padding-left: 8px;
+  }
+  .slot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .slot .jam {
+    text-align: left;
+  }
+}
+
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tabel-jadwal {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+  .kolom-judul {
+    gap: 12px;
+  }
+  .slot {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 8px;
+  }
+  .slot .jam {
+    text-align: left;
+  }
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .tabel-jadwal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 24px;
+  }
+  .kolom-judul {
+    gap: 16px;
+  }
+  .slot {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .slot .jam {
+    text-align: left;
+  }
+}
+
+.label {
+  background-color: #ea8512;
+  color: #fff;
+  padding: 3px 10px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-align: center;
+  white-space: nowrap;
+  min-width: 110px;
+}
+
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--primary);
+  color: #fff;
+  padding: 36px 16px;
+  font-size: 13px;
+  display: grid;
+  gap: 24px;
+}
+/* footer .logo {
+  width: 200px; /* atau lebih sesuai keinginan } */
+footer .cols {
+  display: inline-flexbox;
+  flex-direction: column;
+  gap: 10px;
+}
+footer a:hover {
+  color: var(--secondary);
+}
+footer .social {
+  display: flex;
+  gap: 18px;
+  font-size: 24px;
+}
+
+footer.footer-grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  background: #000;
+  color: #fff;
+  padding: 24px 24px;
+  flex-wrap: wrap;
+  gap: 36px;
+  font-size: 20px;
+  column-gap: 100px;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footer-logo {
+  width: 300px;
+  height: 300px;
+}
+
+.footer-center p {
+  margin: 0 0 12px;
+  line-height: 1.4;
+}
+
+.footer-right p {
+  margin: 0 0 8px;
+  font-weight: 600;
+}
+
+.footer-social {
+  display: flex;
+  gap: 16px;
+  font-size: 20px;
+}
+
+.footer-social a {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-social a:hover {
+  color: var(--secondary); /* pakai warna oranye kalau ada */
+}
+
+.footer-social img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.footer-social a:hover img {
+  filter: brightness(50) saturate(100%) sepia(1) hue-rotate(-30deg) saturate(600%) brightness(100);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  footer.footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* desktop tweaks */
+@media (min-width: 768px) {
+  .warta-card {
+    flex: 0 0 340px;
+  }
+  .hero-carousel-wrapper {
+    aspect-ratio: 16 / 6; /* a little shorter on desktop */
+  }
+  footer {
+    grid-template-columns: auto 1fr auto;
+  }
+  footer .cols {
+    /* flex-direction: row; */
+    justify-content: space-between;
+  }
+}
